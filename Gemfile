@@ -5,13 +5,13 @@ ruby '>= 2.5.0', '< 3.0.0'
 
 gem 'pkg-config', '~> 1.4'
 
-gem 'sentry-raven'
-
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 5.2.4.4'
 gem 'sprockets', '~> 3.7.2'
 gem 'thor', '~> 1.0'
 gem 'rack', '~> 2.2.3'
+
+gem 'sentry-raven'
 
 gem 'hamlit-rails', '~> 0.2'
 gem 'pg', '~> 1.2'
