@@ -31,7 +31,7 @@ module.exports = merge(sharedConfig, {
   stats: 'normal',
   bail: true,
   optimization: {
-    minimize: true,
+    minimize: false,
     minimizer: [
       new TerserPlugin({
         cache: true,
@@ -91,7 +91,7 @@ module.exports = merge(sharedConfig, {
         cacheName: 'mastodon',
         output: '../assets/sw.js',
         publicPath: '/sw.js',
-        minify: true,
+        minify: false,
       },
     }),
   ],

@@ -16,6 +16,9 @@ const fs = require('fs');
 const env = process.env.NODE_ENV || 'development';
 const alwaysRequireAuth = process.env.LIMITED_FEDERATION_MODE === 'true' || process.env.WHITELIST_MODE === 'true' || process.env.AUTHORIZED_FETCH === 'true';
 
+var Raven = require('raven');
+Raven.config(process.env.RAVEN_DSN).install();
+
 dotenv.config({
   path: env === 'production' ? '.env.production' : '.env',
 });

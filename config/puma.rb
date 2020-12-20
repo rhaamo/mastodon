@@ -12,6 +12,17 @@ end
 environment ENV.fetch('RAILS_ENV') { 'development' }
 workers     ENV.fetch('WEB_CONCURRENCY') { 2 }
 
+lowlevel_error_handler do |ex, env|
+	Raven.capture_exception(
+		ex,
+		:message => ex.message,
+		:extra => { :puma => env },
+		:culprit => "Puma"
+	)
+	# note the below is just a Rack response
+	[500, {}, ["An error has occurred, and engineers have been informed. Please reload the page. If you continue to have problems, contact dashie@sigpipe.me\n"]]
+end
+
 preload_app!
 
 on_worker_boot do

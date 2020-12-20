@@ -435,7 +435,7 @@ const fetchComposeSuggestionsAccounts = throttle((dispatch, getState, token) => 
     params: {
       q: token.slice(1),
       resolve: false,
-      limit: 4,
+      limit: 10,
     },
   }).then(response => {
     dispatch(importFetchedAccounts(response.data));

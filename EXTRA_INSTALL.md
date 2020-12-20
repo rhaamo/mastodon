@@ -1,0 +1,7 @@
+- npm install raven --save
+- set DSN in .env.production
+- for puma set DSN in ENVironment in init script or systemd service
+- same in nodejs: streaming/index.js
+- For sidekiq in /etc/systemd/system/mastodon-sidekiq.service:
+  - Environment="RAVEN_DSN_RAILS=xxx"
+  - Environment="RAVEN_DSN=same xxx"
